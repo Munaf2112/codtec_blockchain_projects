@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DeFi Lending DApp (Simulation)</title>
+  <style>
+    /* General body styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4a90e2;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    /* Container styling */
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #4a90e2;
+      box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ab7;
+    }
+
+    /* Section styling */
+    hr {
+      margin: 20px 0;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    /* Center form elements */
+    .section {
+      max-width: 400px;
+      margin: 0 auto 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Status messages */
+    #balance, #depositStatus, #borrowStatus, #repayStatus {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #2a7f2a;
+    }
+  </style>
+</head>
+<body>
+  <h1> DeFi Lending & Borrowing DApp </h1>
+
+  <p id="wallet">Wallet:0xb.....8fd</p>
+  <hr>
+
+  <div class="section">
+    <h3>Check Balance</h3>
+    <input type="text" id="checkAddress" placeholder="Enter address">
+    <button onclick="checkBalance()">Check Balance</button>
+    <p id="balance">Balance: -</p>
+  </div>
+
+  <div class="section">
+    <h3>Deposit Tokens</h3>
+    <input type="number" id="depositAmount" placeholder="Amount">
+    <button onclick="depositTokens()">Deposit</button>
+    <p id="depositStatus">Status: -</p>
+  </div>
+
+  <div class="section">
+    <h3>Borrow Tokens</h3>
+    <input type="number" id="borrowAmount" placeholder="Amount">
+    <button onclick="borrowTokens()">Borrow</button>
+    <p id="borrowStatus">Status: -</p>
+  </div>
+
+  <div class="section">
+    <h3>Repay Loan</h3>
+    <input type="number" id="repayAmount" placeholder="Amount">
+    <button onclick="repayLoan()">Repay</button>
+    <p id="repayStatus">Status: -</p>
+  </div>
+
+  <script>
+    function checkBalance() {
+      let address = document.getElementById("checkAddress").value;
+      if (address === "") {
+        document.getElementById("balance").innerText = "Balance: 0";
+      } else {
+        document.getElementById("balance").innerText =
+          "Balance: 1000 MCT (Simulated)";
+      }
+    }
+
+    function depositTokens() {
+      let amount = document.getElementById("depositAmount").value;
+      document.getElementById("depositStatus").innerText =
+        "Status: Deposited " + amount + " tokens ✅ (Simulated)";
+    }
+
+    function borrowTokens() {
+      let amount = document.getElementById("borrowAmount").value;
+      document.getElementById("borrowStatus").innerText =
+        "Status: Borrowed " + amount + " tokens ✅ (Simulated)";
+    }
+
+    function repayLoan() {
+      let amount = document.getElementById("repayAmount").value;
+      document.getElementById("repayStatus").innerText =
+        "Status: Repaid " + amount + " tokens ✅ (Simulated)";
+    }
+  </script>
+</body>
+</html>
